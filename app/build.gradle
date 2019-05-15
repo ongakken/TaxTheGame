@@ -4,10 +4,10 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.simtoonsoftware.taxthegame"
-        minSdkVersion 22
+        minSdkVersion 24
         targetSdkVersion 28
-        versionCode 4
-        versionName "0.1.0"
+        versionCode 5
+        versionName "0.1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

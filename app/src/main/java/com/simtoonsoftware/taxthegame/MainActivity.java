@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
     // Long and Integers
     public boolean running = true;
-    double version = 2.20;
+    double version = 0.11;
     public long money;
     public long moneylabel;
 
