@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme = "@style/Theme.AppCompat.DayNight.NoActionBar"
+    tools:context=".ClickerGame">
+
+
+    <TextView
+        android:id="@+id/cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif"
+        android:text="Money: 0€"
+        android:textSize="12sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/overclockedspeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif"
+        android:text="Printer Clock: 1000ms"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/gameclock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cash" />
+
+    <TextView
+        android:id="@+id/machines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif"
+        android:text="Printers Active: 0"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/gameclock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cash" />
+
+    <TextView
+        android:id="@+id/gameclock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="serif"
+        android:text="You have played for: 0min"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cash" />
+
+    <Button
+        android:id="@+id/cashbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="serif"
+        android:text="Click\n+1€"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/machineT5"
+        app:layout_constraintEnd_toStartOf="@+id/plusclick"
+        app:layout_constraintStart_toEndOf="@+id/taxDecrease"
+        app:layout_constraintTop_toBottomOf="@+id/machineT2" />
+
+    <Button
+        android:id="@+id/overclockPrinters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif"
+        android:text="OC Printers (-0MS)\n 5000€"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameclock" />
+
+    <Button
+        android:id="@+id/machineT1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="serif"
+        android:text="Tier 1 (0)\n100€\n+1€/s"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/cashbutton"
+        app:layout_constraintEnd_toStartOf="@+id/cashbutton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/machineT2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="serif"
+        android:text="Tier 2 (0)\n1000€\n+10€/s"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/cashbutton"
+        app:layout_constraintEnd_toStartOf="@+id/machineT3"
+        app:layout_constraintStart_toEndOf="@+id/machineT1"
+        app:layout_constraintTop_toBottomOf="@+id/gameclock"
+        app:layout_constraintVertical_bias="0.13999999" />
+
+    <Button
+        android:id="@+id/machineT3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="serif"
+        android:text="Tier 3 (0)\n10000€\n+100€/s"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/cashbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cashbutton" />
+
+    <Button
+        android:id="@+id/machineT4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="serif"
+        android:text="Tier 4 (0)\n10000€\n+1000€/s"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toStartOf="@+id/cashbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cashbutton" />
+
+    <Button
+        android:id="@+id/machineT5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="serif"
+        android:text="Tier 5 (0)\n1000000€\n+10000€/s"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/machineT6"
+        app:layout_constraintStart_toEndOf="@+id/machineT4"
+        app:layout_constraintTop_toBottomOf="@+id/overclockPrinters"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <Button
+        android:id="@+id/machineT6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="serif"
+        android:text="Tier 6 (0)\n10000000€\n+100000€/s"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cashbutton"
+        app:layout_constraintTop_toBottomOf="@+id/cashbutton" />
+
+    <Button
+        android:id="@+id/adbutton"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="Free money\n(AD)"
+        android:textSize="8sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/overclockedspeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/cash"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/taxDecrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="serif"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="Decrease Tax\n7500€"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cashbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cashbutton" />
+
+    <Button
+        android:id="@+id/plusclick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="serif"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="Add +1€ click\n50€"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cashbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cashbutton" />
+
+    <TextView
+        android:id="@+id/taxview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tax every: 16s"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/machineT5"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/machineT4" />
+
+    <TextView
+        android:id="@+id/powerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Bills every: 60s"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/machineT5"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taxview" />
+
+    <TextView
+        android:id="@+id/powerusage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Power Consumption: 0W"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/machineT5"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/powerview"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/shop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Shop"
+        app:layout_constraintBottom_toTopOf="@+id/machineT1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overclockedspeed" />
+
+</android.support.constraint.ConstraintLayout>
