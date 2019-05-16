@@ -426,7 +426,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     printers += 1;
                     printert4 += 1;
                     printerpower += 1000;
-                    Wpower += 25;
+                    Wpower += 40;
                 } else if (100000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
                 }
@@ -441,7 +441,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     printers += 1;
                     printert5 += 1;
                     printerpower += 10000;
-                    Wpower += 72;
+                    Wpower += 145;
                 } else if (1000000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
                 }
@@ -456,7 +456,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     printers += 1;
                     printert6 += 1;
                     printerpower += 100000;
-                    Wpower += 142;
+                    Wpower += 196;
                 } else if (10000000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
                 }
