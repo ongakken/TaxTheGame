@@ -159,11 +159,11 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         // Toasts
         final Context context = getApplicationContext();
-        final CharSequence text = "Clicker Game 2 " + "(" + version + ")" + " Started!";
+        final CharSequence text = "Tax: The Game " + "(" + version + ")" + " Started!";
         final int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
+        //toast.show();
 
         // JLabels
         final TextView cash = findViewById(R.id.cash);
