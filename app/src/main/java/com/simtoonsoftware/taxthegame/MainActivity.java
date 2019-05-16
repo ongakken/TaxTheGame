@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     long tax;
     int taxamount = 20;
     long taxlabel;
-    long taxtime = 16000;
+    long taxtime = 20000;
     long billtime = 60000;
     long click = 1;
     long printerpower;
@@ -253,11 +253,11 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                                 if (WpowerPay > 1000000) {
                                     long WpowerPayLabel = WpowerPay / 1000000;
                                     Toast.makeText(context, "Power Bill paid!" + "\nPaid: " + WpowerPayLabel + "mil€", duration).show();
-                                    money -= WpowerPay;
+                                    money -= WpowerPay/2;
                                     WpowerPay = 0;
                                 } else if (WpowerPay < 1000000 && WpowerPay > 0){
                                     Toast.makeText(context, "Power Bill paid!" + "\nPaid: " + WpowerPay + "€", duration).show();
-                                    money -= WpowerPay;
+                                    money -= WpowerPay/2;
                                     WpowerPay = 0;
                                 }
 
