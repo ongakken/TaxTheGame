@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     private int printert3; private int printert3Price = 10000; private long printert3Tax;
     private int printert4; private int printert4Price = 100000; private long printert4Tax;
     private int printert5; private int printert5Price = 100000000; private long printert5Tax;
-    private int printert6; private long printert6Price = 10000000000; private long printert6Tax;
-    private int printert7; private long printert7Price = 1000000000000; private long printert7Tax;
-    private int printert8; private long printert8Price = 100000000000000; private long printert8Tax;
+    private int printert6; private long printert6Price = 10000000000L; private long printert6Tax;
+    private int printert7; private long printert7Price = 1000000000000L; private long printert7Tax;
+    private int printert8; private long printert8Price = 100000000000000L; private long printert8Tax;
     long printersTax;
     private int time;
     private int printerSpeed = 1000;
@@ -469,15 +469,15 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 10000000000) {
+                if (money >= 10000000000L) {
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 10000000000;
+                    money -= 10000000000L;
                     printers += 1;
                     printert7 += 1;
                     printerpower += 1000000;
                     Wpower += 250;
                 }
-                else if (10000000000 >= money) {
+                else if (10000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
             }
@@ -485,20 +485,20 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 1000000000000) {
+                if (money >= 1000000000000L) {
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 1000000000000;
+                    money -= 1000000000000L;
                     printers += 1;
                     printert8 += 1;
                     printerpower += 10000000;
                     Wpower += 250;
                 }
-                else if (1000000000000 >= money) {
+                else if (1000000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
             }
         });
-                                    }
+
 
         adbutton.setOnClickListener(new View.OnClickListener() {
             @Override
