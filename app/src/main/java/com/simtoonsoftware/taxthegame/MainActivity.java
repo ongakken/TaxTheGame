@@ -31,14 +31,14 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     // Booleans
-    boolean powerbillenabled = true;
-    boolean taxenabled = true;
+    boolean powerBillEnabled = true;
+    boolean taxEnabled = true;
 
     // Long and Integers
     public boolean running = true;
-    double version = 0.20;
+    double version = 0.35;
     public long money;
-    public long moneylabel;
+    public long moneyLabel;
 
     int printers;
     private int printert1; private int printert1Price = 100; private long printert1Tax;
@@ -49,11 +49,11 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     private int printert6; private int printert6Price = 10000000; private long printert6Tax;
     long printersTax;
     private int time;
-    private int printerspeed = 1000;
+    private int printerSpeed = 1000;
     long tax;
-    int taxamount = 20;
-    long taxlabel;
-    long taxtime = 20000;
+    int taxAmount = 20;
+    long taxLabel;
+    long taxTime = 20000;
     long billtime = 60000;
     long click = 1;
     long printerpower;
@@ -89,11 +89,11 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     /*public boolean onOptionsItemSelected(MenuItem item) {
         Intent gotoSettings = new Intent(this, ActionSettingsActivity.class);
         getIntent().putExtra("money", money);
-        getIntent().putExtra("powerbillenabled", powerbillenabled);
-        getIntent().putExtra("taxenabled", taxenabled);
+        getIntent().putExtra("powerBillEnabled", powerBillEnabled);
+        getIntent().putExtra("taxEnabled", taxEnabled);
         getIntent().putExtra("billtime", billtime);
-        getIntent().putExtra("taxtime", taxtime);
-        getIntent().putExtra("taxamount", taxamount);
+        getIntent().putExtra("taxTime", taxTime);
+        getIntent().putExtra("taxAmount", taxAmount);
         startActivity(gotoSettings);
         return super.onOptionsItemSelected(item);
     }*/
@@ -122,13 +122,13 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         printert5 = loadGame.getInt("printert5", 0);
         printert6 = loadGame.getInt("printert6", 0);
         time = loadGame.getInt("time", 0);
-        printerspeed = loadGame.getInt("printerspeed", printerspeed);
+        printerSpeed = loadGame.getInt("printerSpeed", printerSpeed);
         Wpower = loadGame.getLong("Wpower", Wpower);
         WpowerPay = loadGame.getLong("WpowerPay", WpowerPay);
         WpowerPayI = loadGame.getLong("WpowerPayI", WpowerPayI);
-        taxamount = loadGame.getInt("taxamount", taxamount);
-        powerbillenabled = loadGame.getBoolean("powerbillenabled", powerbillenabled);
-        taxenabled = loadGame.getBoolean("taxenabled", taxenabled);
+        taxAmount = loadGame.getInt("taxAmount", taxAmount);
+        powerBillEnabled = loadGame.getBoolean("powerBillEnabled", powerBillEnabled);
+        taxEnabled = loadGame.getBoolean("taxEnabled", taxEnabled);
 
         // Ads Section
         MobileAds.initialize(this, "ca-app-pub-9086446979210331~1649262169");
@@ -208,29 +208,29 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                             @Override
                             public void run() {
                                 if (money > 1000000) {
-                                    moneylabel = money / 1000000;
+                                    moneyLabel = money / 1000000;
                                     printerpowerlabel = printerpower / 1000000;
-                                    cash.setText("Money: " + moneylabel +"mil€ " + "| " + printerpowerlabel + "mil€" + "/" + printerspeed + "s");
+                                    cash.setText("Money: " + moneyLabel +"mil€ " + "| " + printerpowerlabel + "mil€" + "/" + printerSpeed + "s");
                                 } else if (money < 1000000) {
-                                    cash.setText("Money: " + money +"€ " + "| " + printerpower + "€" + "/" + printerspeed + "ms");
+                                    cash.setText("Money: " + money +"€ " + "| " + printerpower + "€" + "/" + printerSpeed + "ms");
                                 }
                                 machines.setText("Printers Active: " + printers);
-                                overclockedspeed.setText("Printer Clock: " + printerspeed + "ms");
+                                overclockedspeed.setText("Printer Clock: " + printerSpeed + "ms");
                                 gameclock.setText("You have played for: " + time + "min");
 
-                                taxview.setText("Tax every: " + taxtime / 1000 + "sec");
+                                taxview.setText("Tax every: " + taxTime / 1000 + "sec");
                                 powerview.setText("Bills every: " + billtime + "sec");
                                 powerusage.setText("Power Consumption: " + Wpower + "W");
 
-                                if (printerspeed > 251) {
-                                    overclock.setText("OC Printers (" + (printerspeed - 1000) + "ms)" + "\n 5000€");
-                                } else if (printerspeed < 251) {
+                                if (printerSpeed > 251) {
+                                    overclock.setText("OC Printers (" + (printerSpeed - 1000) + "ms)" + "\n 5000€");
+                                } else if (printerSpeed < 251) {
                                     overclock.setText("OC Printers " + "(MAX)");
                                 }
 
                                 if (tax > 1000000) {
-                                    taxlabel = tax / 1000000;
-                                    Toast.makeText(context, "Taxes & Printer Taxes paid!" + "\nPaid: " + taxlabel + "mil€", duration).show();
+                                    taxLabel = tax / 1000000;
+                                    Toast.makeText(context, "Taxes & Printer Taxes paid!" + "\nPaid: " + taxLabel + "mil€", duration).show();
                                     money -= tax;
                                     tax -= tax;
                                 } else if (tax > 0) {
@@ -290,15 +290,15 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 save.putInt("printert5", printert5);
                 save.putInt("printert6", printert6);
                 save.putInt("time", time);
-                save.putInt("printerspeed", printerspeed);
+                save.putInt("printerSpeed", printerSpeed);
                 save.putLong("click", click);
                 save.putLong("printerpower", printerpower);
                 save.putLong("Wpower", Wpower);
                 save.putLong("WpowerPay", WpowerPay);
                 save.putLong("WpowerPayI", WpowerPayI);
-                save.putInt("taxamount", taxamount);
-                save.putBoolean("powerbillenabled", powerbillenabled);
-                save.putBoolean("taxenabled", taxenabled);
+                save.putInt("taxAmount", taxAmount);
+                save.putBoolean("powerBillEnabled", powerBillEnabled);
+                save.putBoolean("taxEnabled", taxEnabled);
                 save.apply();
             }
         }, 5000, 5000);
@@ -310,23 +310,23 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     }
                 }, 60000,60000);
 
-        if (taxenabled) {
+        if (taxEnabled) {
             taxtimer.schedule(new TimerTask() {
                 public void run() {
-                    printert1Tax = printert1Price / 100 * taxamount;
-                    printert2Tax = printert2Price / 100 * taxamount;
-                    printert3Tax = printert3Price / 100 * taxamount;
-                    printert4Tax = printert4Price / 100 * taxamount;
-                    printert5Tax = printert5Price / 100 * taxamount;
-                    printert6Tax = printert6Price / 100 * taxamount;
+                    printert1Tax = printert1Price / 100 * taxAmount;
+                    printert2Tax = printert2Price / 100 * taxAmount;
+                    printert3Tax = printert3Price / 100 * taxAmount;
+                    printert4Tax = printert4Price / 100 * taxAmount;
+                    printert5Tax = printert5Price / 100 * taxAmount;
+                    printert6Tax = printert6Price / 100 * taxAmount;
                     printersTax = printert1Tax + printert2Tax + printert3Tax + printert4Tax + printert5Tax + printert6Tax;
-                    tax = money / 100 * taxamount;
+                    tax = money / 100 * taxAmount;
                     printersTax += tax;
                 }
-            }, taxtime, taxtime);
+            }, taxTime, taxTime);
         }
 
-        if (powerbillenabled) {
+        if (powerBillEnabled) {
             powerbill.schedule(new TimerTask() {
                 public void run() {
                     WpowerPay += WpowerPayI;
@@ -353,13 +353,13 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         overclock.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 5000 & printerspeed > 251) {
+                if (money >= 5000 & printerSpeed > 251) {
                     money -= 5000;
-                    printerspeed -= 5;
+                    printerSpeed -= 5;
                     Toast.makeText(context, "Printers Sucessfully Overclocked!", duration).show();
                 } else if (5000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
-                } else if (printerspeed < 251) {
+                } else if (printerSpeed < 251) {
                     Toast.makeText(context, "Maximum Overclock Reached!", duration).show();
                 }
             }
@@ -450,14 +450,14 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 10000000) {
+                if (money >= 100000000) {
                     Toast.makeText(context, "Printer Bought!", duration).show();
-                    money -= 10000000;
+                    money -= 100000000;
                     printers += 1;
                     printert6 += 1;
                     printerpower += 100000;
-                    Wpower += 196;
-                } else if (10000000 >= money) {
+                    Wpower += 200;
+                } else if (100000000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
                 }
             }
@@ -476,7 +476,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             @Override
             public void run() {
                 while (running) {
-                    delay(printerspeed);
+                    delay(printerSpeed);
                     money += printerpower;
                 }
             }
@@ -486,7 +486,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             @Override
             public void run() {
                 while (running) {
-                    delay(printerspeed);
+                    delay(printerSpeed);
                     WpowerPayI += Wpower;
                 }
             }
