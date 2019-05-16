@@ -45,8 +45,10 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     private int printert2; private int printert2Price = 1000; private long printert2Tax;
     private int printert3; private int printert3Price = 10000; private long printert3Tax;
     private int printert4; private int printert4Price = 100000; private long printert4Tax;
-    private int printert5; private int printert5Price = 1000000; private long printert5Tax;
-    private int printert6; private int printert6Price = 10000000; private long printert6Tax;
+    private int printert5; private int printert5Price = 100000000; private long printert5Tax;
+    private int printert6; private long printert6Price = 10000000000; private long printert6Tax;
+    private int printert7; private long printert7Price = 1000000000000; private long printert7Tax;
+    private int printert8; private long printert8Price = 100000000000000; private long printert8Tax;
     long printersTax;
     private int time;
     private int printerSpeed = 1000;
@@ -188,6 +190,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         final Button machine3 = findViewById(R.id.machineT4);
         final Button machine4 = findViewById(R.id.machineT5);
         final Button machine5 = findViewById(R.id.machineT6);
+        final Button machine6 = findViewById(R.id.machineT7);
+        final Button machine7 = findViewById(R.id.machineT8);
 
         // Buttons Bottom
         final Button btn_about = findViewById(R.id.btn_about);
@@ -222,9 +226,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                                 powerview.setText("Bills every: " + billtime + "sec");
                                 powerusage.setText("Power Consumption: " + Wpower + "W");
 
-                                if (printerSpeed > 251) {
+                                if (printerSpeed > 751) {
                                     overclock.setText("OC Printers (" + (printerSpeed - 1000) + "ms)" + "\n 5000€");
-                                } else if (printerSpeed < 251) {
+                                } else if (printerSpeed < 751) {
                                     overclock.setText("OC Printers " + "(MAX)");
                                 }
 
@@ -353,13 +357,13 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         overclock.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 5000 & printerSpeed > 251) {
+                if (money >= 5000 & printerSpeed > 751) {
                     money -= 5000;
                     printerSpeed -= 5;
                     Toast.makeText(context, "Printers Sucessfully Overclocked!", duration).show();
                 } else if (5000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
-                } else if (printerSpeed < 251) {
+                } else if (printerSpeed < 751) {
                     Toast.makeText(context, "Maximum Overclock Reached!", duration).show();
                 }
             }
@@ -463,6 +467,39 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             }
         });
 
+        machine6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (money >= 10000000000) {
+                    Toast.makeText(context, "Printer bought!", duration).show();
+                    money -= 10000000000;
+                    printers += 1;
+                    printert7 += 1;
+                    printerpower += 1000000;
+                    Wpower += 250;
+                }
+                else if (10000000000 >= money) {
+                    Toast.makeText(context, "Not enough money!", duration).show();
+                }
+            }
+        });
+
+        machine7.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (money >= 1000000000000) {
+                    Toast.makeText(context, "Printer bought!", duration).show();
+                    money -= 1000000000000;
+                    printers += 1;
+                    printert8 += 1;
+                    printerpower += 10000000;
+                    Wpower += 250;
+                }
+                else if (1000000000000 >= money) {
+                    Toast.makeText(context, "Not enough money!", duration).show();
+                }
+            }
+        });
+                                    }
+
         adbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -490,7 +527,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     WpowerPayI += Wpower;
                 }
             }
-        });powercompute.start();
+        });
+
+        powercompute.start();
 
         btn_about.setOnClickListener(new View.OnClickListener() {
             @Override
