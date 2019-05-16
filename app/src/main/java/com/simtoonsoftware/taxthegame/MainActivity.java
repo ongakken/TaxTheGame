@@ -311,9 +311,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 save.putInt("printert6", printert6);
                 save.putInt("printert7", printert7);
                 save.putInt("printert8", printert8);
-                save.putInt("printert9", printert8);
-                save.putInt("printert10", printert8);
-                save.putInt("printert11", printert8);
+                save.putInt("printert9", printert9);
+                save.putInt("printert10", printert10);
+                save.putInt("printert11", printert11);
                 save.putInt("time", time);
                 save.putInt("printerSpeed", printerSpeed);
                 save.putLong("click", click);
@@ -497,10 +497,10 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             public void onClick(View v) {
                 if (money >= 10000000000L) {
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 10000000000L;
+                    money -= 100000000; //10000000000L;
                     printers += 1;
                     printert7 += 1;
-                    printerpower += 10000000;
+                    printerpower += 150000;
                     Wpower += 250;
                 }
                 else if (10000000000L >= money) {
@@ -513,10 +513,10 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             public void onClick(View v) {
                 if (money >= 1000000000000L) {
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 1000000000000L;
+                    money -= 10000000000L;
                     printers += 1;
                     printert8 += 1;
-                    printerpower += 100000000;
+                    printerpower += 225000;
                     Wpower += 250;
                 }
                 else if (1000000000000L >= money) {
@@ -529,10 +529,10 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             public void onClick(View v) {
                 if (money >= 100000000000000L) {
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 100000000000000L;
+                    money -= 1000000000000L;
                     printers += 1;
                     printert9 += 1;
-                    printerpower += 1000000000;
+                    printerpower += 337500;
                     Wpower += 250;
                 }
                 else if (100000000000000L >= money) {
@@ -545,10 +545,10 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             public void onClick(View v) {
                 if (money >= 10000000000000000L) {
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 10000000000000000L;
+                    money -= 1000000000000L;
                     printers += 1;
                     printert10 += 1;
-                    printerpower += 10000000000L;
+                    printerpower += 506250;
                     Wpower += 250;
                 }
                 else if (10000000000000000L >= money) {
@@ -564,7 +564,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 10000000000000000L;
                     printers += 1;
                     printert11 += 1;
-                    printerpower += 100000000000L;
+                    printerpower += 1000000000;
                     Wpower += 250;
                 }
                 else if (10000000000000000L >= money) {
