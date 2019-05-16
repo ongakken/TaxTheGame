@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             exp.printStackTrace();
         }
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
