@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         powerbillenabled = loadGame.getBoolean("powerbillenabled", powerbillenabled);
         taxenabled = loadGame.getBoolean("taxenabled", taxenabled);
 
-        // Ad Section
+        // Ads Section
         MobileAds.initialize(this, "ca-app-pub-9086446979210331~1649262169");
         //MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713"); //!!!!!!!!!!! TEST ID !!!!!!!!!!!
         prepareAd();
