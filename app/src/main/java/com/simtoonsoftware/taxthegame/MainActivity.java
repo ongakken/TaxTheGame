@@ -283,11 +283,11 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                                 machine3.setText("Tier 4 " + "(" + printert4 + ")" + "\n100000€\n+1000€/s");
                                 machine4.setText("Tier 5 " + "(" + printert5 + ")" + "\n1000000€\n+10000€/s");
                                 machine5.setText("Tier 6 " + "(" + printert6 + ")" + "\n100000000€\n+100000/s");
-                                machine6.setText("Tier 7 " + "(" + printert7 + ")" + "\n10000000000€\n+1000000/s");
-                                machine7.setText("Tier 8 " + "(" + printert8 + ")" + "\n100000000000000€\n+10000000/s");
-                                machine8.setText("Tier 9 " + "(" + printert9 + ")" + "\n10000000000000000€\n+10000000/s");
-                                machine9.setText("Tier 10 " + "(" + printert10 + ")" + "\n1000000000000000000€\n+100000000/s");
-                                machine10.setText("Tier 11 " + "(" + printert11 + ")" + "\n1000000000000000000€\n+1000000000/s");
+                                machine6.setText("Tier 7 " + "(" + printert7 + ")" + "\n10000000000€\n+10000000/s");
+                                machine7.setText("Tier 8 " + "(" + printert8 + ")" + "\n100000000000000€\n+100000000/s");
+                                machine8.setText("Tier 9 " + "(" + printert9 + ")" + "\n10000000000000000€\n+100000000/s");
+                                machine9.setText("Tier 10 " + "(" + printert10 + ")" + "\n1000000000000000000€\n+1000000000/s");
+                                machine10.setText("Tier 11 " + "(" + printert11 + ")" + "\n1000000000000000000€\n+10000000000/s");
                             }
                         });
 
@@ -386,7 +386,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 if (money >= 5000 & printerSpeed > 751) {
                     money -= 5000;
                     printerSpeed -= 5;
-                    Toast.makeText(context, "Printers Sucessfully Overclocked!", duration).show();
+                    Toast.makeText(context, "Printers Successfully Overclocked!", duration).show();
                 } else if (5000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
                 } else if (printerSpeed < 751) {
@@ -500,7 +500,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 10000000000L;
                     printers += 1;
                     printert7 += 1;
-                    printerpower += 1000000;
+                    printerpower += 10000000;
                     Wpower += 250;
                 }
                 else if (10000000000L >= money) {
@@ -516,7 +516,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 1000000000000L;
                     printers += 1;
                     printert8 += 1;
-                    printerpower += 10000000;
+                    printerpower += 100000000;
                     Wpower += 250;
                 }
                 else if (1000000000000L >= money) {
@@ -531,8 +531,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     Toast.makeText(context, "Printer bought!", duration).show();
                     money -= 100000000000000L;
                     printers += 1;
-                    printert8 += 1;
-                    printerpower += 100000000;
+                    printert9 += 1;
+                    printerpower += 1000000000;
                     Wpower += 250;
                 }
                 else if (100000000000000L >= money) {
@@ -547,8 +547,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     Toast.makeText(context, "Printer bought!", duration).show();
                     money -= 10000000000000000L;
                     printers += 1;
-                    printert8 += 1;
-                    printerpower += 1000000000;
+                    printert10 += 1;
+                    printerpower += 10000000000L;
                     Wpower += 250;
                 }
                 else if (10000000000000000L >= money) {
@@ -563,8 +563,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     Toast.makeText(context, "Printer bought!", duration).show();
                     money -= 10000000000000000L;
                     printers += 1;
-                    printert8 += 1;
-                    printerpower += 10000000000L;
+                    printert11 += 1;
+                    printerpower += 100000000000L;
                     Wpower += 250;
                 }
                 else if (10000000000000000L >= money) {
