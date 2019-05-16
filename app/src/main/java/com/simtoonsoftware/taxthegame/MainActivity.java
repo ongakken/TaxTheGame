@@ -2,6 +2,7 @@ package com.simtoonsoftware.taxthegame;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
     // Long and Integers
     public boolean running = true;
-    double version = 0.11;
+    double version = 0.20;
     public long money;
     public long moneylabel;
 
@@ -188,6 +189,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         final Button machine3 = findViewById(R.id.machineT4);
         final Button machine4 = findViewById(R.id.machineT5);
         final Button machine5 = findViewById(R.id.machineT6);
+
+        // Buttons Bottom
+        final Button btn_about = findViewById(R.id.btn_about);
 
         // Timers
         Timer clock = new Timer();
@@ -488,6 +492,13 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 }
             }
         });powercompute.start();
+
+        btn_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
+            }
+        });
     }
 
     public void prepareAd() {
