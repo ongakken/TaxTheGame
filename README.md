@@ -1,2 +1,2 @@
 # TaxTheGame
-Prove that one can stand up against the System and circumvent the tax system.
+A game in which you can attempt to circumvent the System and bypass taxes, print money and use it to print even more money.
