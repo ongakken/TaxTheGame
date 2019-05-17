@@ -500,7 +500,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 100000000; //10000000000L;
                     printers += 1;
                     printert7 += 1;
-                    printerpower += 150000;
+                    printerpower += 1500000;
                     Wpower += 250;
                 }
                 else if (10000000000L >= money) {
@@ -516,7 +516,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 10000000000L;
                     printers += 1;
                     printert8 += 1;
-                    printerpower += 225000;
+                    printerpower += 2250000;
                     Wpower += 250;
                 }
                 else if (1000000000000L >= money) {
@@ -532,7 +532,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 1000000000000L;
                     printers += 1;
                     printert9 += 1;
-                    printerpower += 337500;
+                    printerpower += 3375000;
                     Wpower += 250;
                 }
                 else if (100000000000000L >= money) {
@@ -548,7 +548,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 1000000000000L;
                     printers += 1;
                     printert10 += 1;
-                    printerpower += 506250;
+                    printerpower += 5062500;
                     Wpower += 250;
                 }
                 else if (10000000000000000L >= money) {
@@ -564,7 +564,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 10000000000000000L;
                     printers += 1;
                     printert11 += 1;
-                    printerpower += 1000000000;
+                    printerpower += 10000000000L;
                     Wpower += 250;
                 }
                 else if (10000000000000000L >= money) {
