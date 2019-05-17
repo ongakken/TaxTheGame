@@ -485,7 +485,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 100000000;
                     printers += 1;
                     printert6 += 1;
-                    printerpower += 100000;
+                    printerpower += 1500000;
                     Wpower += 200;
                 } else if (100000000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
