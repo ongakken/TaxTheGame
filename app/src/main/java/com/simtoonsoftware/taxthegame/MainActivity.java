@@ -160,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                             //RandomMoneyAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build()); //!!!!!!!!!!! TEST ID !!!!!!!!!!!
                             RandomMoneyAd.loadAd("ca-app-pub-9086446979210331/4874191306", new AdRequest.Builder().build());
                             android.util.Log.d("TAG", " Interstitial not loaded");
+                            prepareAd();
                         }
                         prepareAd();
                     }
