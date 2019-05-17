@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     private int printert2; private int printert2Price = 1000; private long printert2Tax;
     private int printert3; private int printert3Price = 10000; private long printert3Tax;
     private int printert4; private int printert4Price = 100000; private long printert4Tax;
-    private int printert5; private int printert5Price = 100000000; private long printert5Tax;
-    private int printert6; private long printert6Price = 10000000000L; private long printert6Tax;
-    private int printert7; private long printert7Price = 1000000000000L; private long printert7Tax;
-    private int printert8; private long printert8Price = 100000000000000L; private long printert8Tax;
-    private int printert9; private long printert9Price = 10000000000000000L; private long printert9Tax;
-    private int printert10; private long printert10Price = 1000000000000000000L; private long printert10Tax;
+    private int printert5; private int printert5Price = 1000000; private long printert5Tax;
+    private int printert6; private long printert6Price = 100000000; private long printert6Tax;
+    private int printert7; private long printert7Price = 10000000000L; private long printert7Tax;
+    private int printert8; private long printert8Price = 1000000000000L; private long printert8Tax;
+    private int printert9; private long printert9Price = 100000000000000L; private long printert9Tax;
+    private int printert10; private long printert10Price = 10000000000000000L; private long printert10Tax;
     private int printert11; private long printert11Price = 1000000000000000000L; private long printert11Tax; //type long too long :-D
     long printersTax;
     private int time;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     public static final String SAVE = "Clicker%Game%2%Save";
 
     // Ad Section
-    private InterstitialAd RandomAd;
+    private InterstitialAd RandomInterstitialAd;
     private RewardedVideoAd RandomMoneyAd;
 
     public static void delay(int millis) {
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -159,13 +159,13 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                         } else {
                             //RandomMoneyAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build()); //!!!!!!!!!!! TEST ID !!!!!!!!!!!
                             RandomMoneyAd.loadAd("ca-app-pub-9086446979210331/4874191306", new AdRequest.Builder().build());
-                            android.util.Log.d("TAG"," Interstitial not loaded");
+                            android.util.Log.d("TAG", " Interstitial not loaded");
                         }
                         prepareAd();
                     }
                 });
             }
-        }, 15, 120, java.util.concurrent.TimeUnit.SECONDS);
+        }, 5, 120, java.util.concurrent.TimeUnit.SECONDS);
 
         // Toasts
         final Context context = getApplicationContext();
@@ -213,10 +213,10 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         Timer autosave = new Timer();
         final Timer powerbill = new Timer();
 
-        Thread syncthread = new Thread(){
+        Thread syncthread = new Thread() {
             @Override
-            public void run(){
-                while(!isInterrupted()){
+            public void run() {
+                while (!isInterrupted()) {
                     try {
                         Thread.sleep(125);
                         runOnUiThread(new Runnable() {
@@ -225,9 +225,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                                 if (money > 1000000) {
                                     moneyLabel = money / 1000000;
                                     printerpowerlabel = printerpower / 1000000;
-                                    cash.setText("Money: " + moneyLabel +"mil€ " + "| " + printerpowerlabel + "mil€" + "/" + printerSpeed + "s");
+                                    cash.setText("Money: " + moneyLabel + "mil€ " + "| " + printerpowerlabel + "mil€" + "/" + printerSpeed + "s");
                                 } else if (money < 1000000) {
-                                    cash.setText("Money: " + money +"€ " + "| " + printerpower + "€" + "/" + printerSpeed + "ms");
+                                    cash.setText("Money: " + money + "€ " + "| " + printerpower + "€" + "/" + printerSpeed + "ms");
                                 }
                                 machines.setText("Printers Active: " + printers);
                                 overclockedspeed.setText("Printer Clock: " + printerSpeed + "ms");
@@ -268,26 +268,26 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                                 if (WpowerPay > 1000000) {
                                     long WpowerPayLabel = WpowerPay / 1000000;
                                     Toast.makeText(context, "Power Bill paid!" + "\nPaid: " + WpowerPayLabel + "mil€", duration).show();
-                                    money -= WpowerPay/2;
+                                    money -= WpowerPay / 2;
                                     WpowerPay = 0;
-                                } else if (WpowerPay < 1000000 && WpowerPay > 0){
+                                } else if (WpowerPay < 1000000 && WpowerPay > 0) {
                                     Toast.makeText(context, "Power Bill paid!" + "\nPaid: " + WpowerPay + "€", duration).show();
-                                    money -= WpowerPay/2;
+                                    money -= WpowerPay / 2;
                                     WpowerPay = 0;
                                 }
 
-                                cashbutton.setText("Click\n" + click +"€");
-                                machine.setText("Tier 1 " + "(" + printert1 + ")" + "\n100€\n+1€/s");
-                                machine1.setText("Tier 2 " + "(" + printert2 + ")" + "\n1000€\n+10€/s");
-                                machine2.setText("Tier 3 " + "(" + printert3 + ")" + "\n10000€\n+100€/s");
-                                machine3.setText("Tier 4 " + "(" + printert4 + ")" + "\n100000€\n+1000€/s");
-                                machine4.setText("Tier 5 " + "(" + printert5 + ")" + "\n1000000€\n+10000€/s");
-                                machine5.setText("Tier 6 " + "(" + printert6 + ")" + "\n100000000€\n+100000/s");
-                                machine6.setText("Tier 7 " + "(" + printert7 + ")" + "\n10000000000€\n+10000000/s");
-                                machine7.setText("Tier 8 " + "(" + printert8 + ")" + "\n100000000000000€\n+100000000/s");
-                                machine8.setText("Tier 9 " + "(" + printert9 + ")" + "\n10000000000000000€\n+100000000/s");
-                                machine9.setText("Tier 10 " + "(" + printert10 + ")" + "\n1000000000000000000€\n+1000000000/s");
-                                machine10.setText("Tier 11 " + "(" + printert11 + ")" + "\n1000000000000000000€\n+10000000000/s");
+                                cashbutton.setText("Click\n" + click + "€");
+                                machine.setText("Tier 1 " + "(" + printert1 + ")" + "\n100€\n+2€/s");
+                                machine1.setText("Tier 2 " + "(" + printert2 + ")" + "\n1000€\n+25€/s");
+                                machine2.setText("Tier 3 " + "(" + printert3 + ")" + "\n10000€\n+250€/s");
+                                machine3.setText("Tier 4 " + "(" + printert4 + ")" + "\n100000€\n+2500€/s");
+                                machine4.setText("Tier 5 " + "(" + printert5 + ")" + "\n1 Million€\n+25000€/s");
+                                machine5.setText("Tier 6 " + "(" + printert6 + ")" + "\n100 Million€\n+25 Million/s");
+                                machine6.setText("Tier 7 " + "(" + printert7 + ")" + "\n10 Billion€\n+250 Million/s");
+                                machine7.setText("Tier 8 " + "(" + printert8 + ")" + "\n1 Trillion€\n+25 Billion/s");
+                                machine8.setText("Tier 9 " + "(" + printert9 + ")" + "\n100 Trillion€\n+2,5 Trillion/s");
+                                machine9.setText("Tier 10 " + "(" + printert10 + ")" + "\n10 Quadrillion€\n+250 Trillion/s");
+                                machine10.setText("Tier 11 " + "(" + printert11 + ")" + "\n1 Quintillion€\n+25 Quadrillion/s");
                             }
                         });
 
@@ -296,7 +296,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     }
                 }
             }
-        };syncthread.start();
+        };
+        syncthread.start();
 
         autosave.schedule(new TimerTask() {
             @Override
@@ -333,7 +334,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     public void run() {
                         time += 1;
                     }
-                }, 60000,60000);
+                }, 60000, 60000);
 
         if (taxEnabled) {
             taxtimer.schedule(new TimerTask() {
@@ -374,8 +375,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             public void onClick(View v) {
                 if (money >= 50) {
                     money -= 50;
-                    click ++;
-                } else if (50 >= money){
+                    click++;
+                } else if (50 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
                 }
             }
@@ -410,7 +411,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 100;
                     printers += 1;
                     printert1 += 1;
-                    printerpower += 1;
+                    printerpower += 2;
                     Wpower += 2;
                 } else if (100 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
@@ -425,7 +426,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 1000;
                     printers += 1;
                     printert2 += 1;
-                    printerpower += 10;
+                    printerpower += 25;
                     Wpower += 5;
                 } else if (1000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
@@ -440,7 +441,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 10000;
                     printers += 1;
                     printert3 += 1;
-                    printerpower += 100;
+                    printerpower += 250;
                     Wpower += 10;
                 } else if (10000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
@@ -455,7 +456,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 100000;
                     printers += 1;
                     printert4 += 1;
-                    printerpower += 1000;
+                    printerpower += 2500;
                     Wpower += 40;
                 } else if (100000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
@@ -470,7 +471,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money -= 1000000;
                     printers += 1;
                     printert5 += 1;
-                    printerpower += 10000;
+                    printerpower += 25000;
                     Wpower += 145;
                 } else if (1000000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
@@ -480,12 +481,12 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 100000000) {
+                if (money >= 100000000) { // "\n100 Million€\n+25 Million/s");
                     Toast.makeText(context, "Printer Bought!", duration).show();
                     money -= 100000000;
                     printers += 1;
                     printert6 += 1;
-                    printerpower += 1500000;
+                    printerpower += 25000000;
                     Wpower += 200;
                 } else if (100000000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
@@ -495,15 +496,14 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 10000000000L) {
+                if (money >= 10000000000L) { // "\n10 Billion€\n+250 Million/s");
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 100000000; //10000000000L;
+                    money -= 10000000000L; //10000000000L;
                     printers += 1;
                     printert7 += 1;
-                    printerpower += 1500000;
+                    printerpower += 250000000;
                     Wpower += 250;
-                }
-                else if (10000000000L >= money) {
+                } else if (10000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
             }
@@ -511,15 +511,14 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 1000000000000L) {
+                if (money >= 1000000000000L) { // "\n1 Trillion€\n+25 Billion/s");
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 10000000000L;
+                    money -= 1000000000000L;
                     printers += 1;
                     printert8 += 1;
-                    printerpower += 2250000;
+                    printerpower += 25000000000L;
                     Wpower += 250;
-                }
-                else if (1000000000000L >= money) {
+                } else if (1000000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
             }
@@ -527,15 +526,14 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 100000000000000L) {
+                if (money >= 100000000000000L) { // "\n100 Trillion€\n+2,5 Trillion/s");
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 1000000000000L;
+                    money -= 100000000000000L;
                     printers += 1;
                     printert9 += 1;
-                    printerpower += 3375000;
+                    printerpower += 2500000000000L;
                     Wpower += 250;
-                }
-                else if (100000000000000L >= money) {
+                } else if (100000000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
             }
@@ -543,15 +541,14 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 10000000000000000L) {
+                if (money >= 10000000000000000L) { // "\n10 Quadrillion€\n+250 Trillion/s");
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 1000000000000L;
+                    money -= 10000000000000000L;
                     printers += 1;
                     printert10 += 1;
-                    printerpower += 5062500;
+                    printerpower += 250000000000000L;
                     Wpower += 250;
-                }
-                else if (10000000000000000L >= money) {
+                } else if (10000000000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
             }
@@ -559,15 +556,14 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         machine10.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (money >= 10000000000000000L) {
+                if (money >= 1000000000000000000L) { // "\n1 Quintillion€\n+25 Quadrillion/s");
                     Toast.makeText(context, "Printer bought!", duration).show();
-                    money -= 10000000000000000L;
+                    money -= 1000000000000000000L;
                     printers += 1;
                     printert11 += 1;
-                    printerpower += 10000000000L;
+                    printerpower += 25000000000000000L;
                     Wpower += 250;
-                }
-                else if (10000000000000000L >= money) {
+                } else if (1000000000000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
             }
@@ -591,7 +587,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     money += printerpower;
                 }
             }
-        });printercompute.start();
+        });
+        printercompute.start();
 
         Thread powercompute = new Thread(new Runnable() {
             @Override
@@ -608,15 +605,17 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         btn_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                prepareAd();
+                RandomInterstitialAd.show();
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
             }
         });
     }
 
     public void prepareAd() {
-        //RandomAd = new RewardedVideoAd(this);
-        //.setAdUnitId("ca-app-pub-9086446979210331/4874191306");
-        //RandomAd.loadAd(new AdRequest.Builder().build());
+        RandomInterstitialAd = new InterstitialAd(this);
+        RandomInterstitialAd.setAdUnitId("ca-app-pub-9086446979210331/4885707704");
+        RandomInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
     @Override
