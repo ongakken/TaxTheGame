@@ -190,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         final Button plusclickbutton = findViewById(R.id.plusclick);
         final Button adbutton = findViewById(R.id.adbutton);
         final Button shop = findViewById(R.id.shop);
+        final Button btn_reset = findViewById(R.id.btn_reset);
 
         // Buttons Middle
         final Button machine = findViewById(R.id.machineT1);
@@ -580,6 +581,13 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 if (RandomMoneyAd.isLoaded()) {
                     RandomMoneyAd.show();
                 }
+            }
+        });
+
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recreate();
             }
         });
 
