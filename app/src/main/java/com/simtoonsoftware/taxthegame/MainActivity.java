@@ -90,6 +90,40 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         return super.onCreateOptionsMenu(menu);
     }
 
+    public final SharedPreferences saveGame = getSharedPreferences(SAVE, MODE_PRIVATE);
+    public final SharedPreferences.Editor save = saveGame.edit();
+    public final SharedPreferences loadGame = getSharedPreferences(SAVE, MODE_PRIVATE);
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        save.putLong("money", money);
+        save.putInt("printers", printers);
+        save.putInt("printert1", printert1);
+        save.putInt("printert2", printert2);
+        save.putInt("printert3", printert3);
+        save.putInt("printert4", printert4);
+        save.putInt("printert5", printert5);
+        save.putInt("printert6", printert6);
+        save.putInt("printert7", printert7);
+        save.putInt("printert8", printert8);
+        save.putInt("printert9", printert9);
+        save.putInt("printert10", printert10);
+        save.putInt("printert11", printert11);
+        save.putInt("time", time);
+        save.putInt("printerSpeed", printerSpeed);
+        save.putLong("click", click);
+        save.putLong("printerpower", printerpower);
+        save.putLong("Wpower", Wpower);
+        save.putLong("WpowerPay", WpowerPay);
+        save.putLong("WpowerPayI", WpowerPayI);
+        save.putInt("taxAmount", taxAmount);
+        save.putBoolean("powerBillEnabled", powerBillEnabled);
+        save.putBoolean("taxEnabled", taxEnabled);
+        save.apply();
+        finish();
+    }
+
     @Override
     /*public boolean onOptionsItemSelected(MenuItem item) {
         Intent gotoSettings = new Intent(this, ActionSettingsActivity.class);
@@ -112,10 +146,6 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //AutoSave Section
-        final SharedPreferences saveGame = getSharedPreferences(SAVE, MODE_PRIVATE);
-        final SharedPreferences.Editor save = saveGame.edit();
-
-        final SharedPreferences loadGame = getSharedPreferences(SAVE, MODE_PRIVATE);
         money = loadGame.getLong("money", 0);
         click = loadGame.getLong("click", click);
         printerpower = loadGame.getLong("printerpower", 0);
@@ -600,6 +630,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 printert10 = 0;
                 printert11 = 0;
                 time = 0;
+                Wpower = 0;
+                WpowerPay = 0;
+                WpowerPayI = 0;
                 powerBillEnabled = true;
                 taxEnabled = true;
             }
@@ -614,35 +647,6 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 }
             }
         });
-
-        public void onActivityExit() {
-            super.onStop();
-            save.putLong("money", money);
-            save.putInt("printers", printers);
-            save.putInt("printert1", printert1);
-            save.putInt("printert2", printert2);
-            save.putInt("printert3", printert3);
-            save.putInt("printert4", printert4);
-            save.putInt("printert5", printert5);
-            save.putInt("printert6", printert6);
-            save.putInt("printert7", printert7);
-            save.putInt("printert8", printert8);
-            save.putInt("printert9", printert9);
-            save.putInt("printert10", printert10);
-            save.putInt("printert11", printert11);
-            save.putInt("time", time);
-            save.putInt("printerSpeed", printerSpeed);
-            save.putLong("click", click);
-            save.putLong("printerpower", printerpower);
-            save.putLong("Wpower", Wpower);
-            save.putLong("WpowerPay", WpowerPay);
-            save.putLong("WpowerPayI", WpowerPayI);
-            save.putInt("taxAmount", taxAmount);
-            save.putBoolean("powerBillEnabled", powerBillEnabled);
-            save.putBoolean("taxEnabled", taxEnabled);
-            save.apply();
-            finish();
-        }
 
         printercompute.start();
 
