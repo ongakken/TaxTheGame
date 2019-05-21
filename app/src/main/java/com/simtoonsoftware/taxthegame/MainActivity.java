@@ -597,6 +597,36 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 }
             }
         });
+
+        public void onActivityExit() {
+            super.onStop();
+            save.putLong("money", money);
+            save.putInt("printers", printers);
+            save.putInt("printert1", printert1);
+            save.putInt("printert2", printert2);
+            save.putInt("printert3", printert3);
+            save.putInt("printert4", printert4);
+            save.putInt("printert5", printert5);
+            save.putInt("printert6", printert6);
+            save.putInt("printert7", printert7);
+            save.putInt("printert8", printert8);
+            save.putInt("printert9", printert9);
+            save.putInt("printert10", printert10);
+            save.putInt("printert11", printert11);
+            save.putInt("time", time);
+            save.putInt("printerSpeed", printerSpeed);
+            save.putLong("click", click);
+            save.putLong("printerpower", printerpower);
+            save.putLong("Wpower", Wpower);
+            save.putLong("WpowerPay", WpowerPay);
+            save.putLong("WpowerPayI", WpowerPayI);
+            save.putInt("taxAmount", taxAmount);
+            save.putBoolean("powerBillEnabled", powerBillEnabled);
+            save.putBoolean("taxEnabled", taxEnabled);
+            save.apply();
+            finish();
+        }
+
         printercompute.start();
 
         Thread powercompute = new Thread(new Runnable() {
