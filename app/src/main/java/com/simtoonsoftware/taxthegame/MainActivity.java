@@ -583,6 +583,26 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                save.clear();
+                save.commit();
+                money = 0;
+                click = 1;
+                printerpower = 0;
+                printers = 0;
+                printert1 = 0;
+                printert2 = 0;
+                printert3 = 0;
+                printert4 = 0;
+                printert5 = 0;
+                printert6 = 0;
+                printert7 = 0;
+                printert8 = 0;
+                printert9 = 0;
+                printert10 = 0;
+                printert11 = 0;
+                time = 0;
+                powerBillEnabled = true;
+                taxEnabled = true;
             }
         });
 
