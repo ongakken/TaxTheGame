@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     protected void onStop() {
         super.onStop();
         System.out.println("Exiting ..."); //printing to console
+        android.os.Process.killProcess(android.os.Process.myPid());
         finish();
     }
 
@@ -338,7 +339,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 save.putBoolean("taxEnabled", taxEnabled);
                 save.apply();
             }
-        }, 5000, 5000);
+        }, 2500, 2500);
 
         clock.schedule(
                 new TimerTask() {
