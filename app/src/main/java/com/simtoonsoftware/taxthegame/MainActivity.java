@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     }*/
 
     @SuppressLint("ClickableViewAccessibility")
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -112,10 +112,10 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //AutoSave Section
-        SharedPreferences saveGame = getSharedPreferences(SAVE, MODE_PRIVATE);
+        final SharedPreferences saveGame = getSharedPreferences(SAVE, MODE_PRIVATE);
         final SharedPreferences.Editor save = saveGame.edit();
 
-        SharedPreferences loadGame = getSharedPreferences(SAVE, MODE_PRIVATE);
+        final SharedPreferences loadGame = getSharedPreferences(SAVE, MODE_PRIVATE);
         money = loadGame.getLong("money", 0);
         click = loadGame.getLong("click", click);
         printerpower = loadGame.getLong("printerpower", 0);
@@ -142,7 +142,6 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
 
         // Ads Section
         MobileAds.initialize(this, "ca-app-pub-9086446979210331~1649262169");
-        //MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713"); //!!!!!!!!!!! TEST ID !!!!!!!!!!!
         prepareAd();
 
         RandomMoneyAd = MobileAds.getRewardedVideoAdInstance(this);
@@ -157,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     public void run() {
                         if (RandomMoneyAd.isLoaded()) {
                         } else {
-                            //RandomMoneyAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build()); //!!!!!!!!!!! TEST ID !!!!!!!!!!!
                             RandomMoneyAd.loadAd("ca-app-pub-9086446979210331/4874191306", new AdRequest.Builder().build());
                             android.util.Log.d("TAG", " Interstitial not loaded");
                             prepareAd();
@@ -584,7 +582,26 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recreate();
+                save.clear();
+                save.commit();
+                money = 0;
+                click = 1;
+                printerpower = 0;
+                printers = 0;
+                printert1 = 0;
+                printert2 = 0;
+                printert3 = 0;
+                printert4 = 0;
+                printert5 = 0;
+                printert6 = 0;
+                printert7 = 0;
+                printert8 = 0;
+                printert9 = 0;
+                printert10 = 0;
+                printert11 = 0;
+                time = 0;
+                powerBillEnabled = true;
+                taxEnabled = true;
             }
         });
 
