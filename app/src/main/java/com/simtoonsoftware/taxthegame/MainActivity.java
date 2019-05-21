@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     //public final SharedPreferences loadGame = getSharedPreferences(SAVE, MODE_PRIVATE);
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        System.out.println("Exiting ..."); //printing to console
+    protected void onPause() {
+        super.onPause();
+        System.out.println("Exiting MainActivity ..."); //printing to console
         android.os.Process.killProcess(android.os.Process.myPid());
         finish();
     }
@@ -649,6 +649,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             public void onClick(View v) {
                 prepareAd();
                 RandomInterstitialAd.show();
+                //Intent i = new Intent(MainActivity.this, AboutActivity.class);
+                //i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                //startActivity(i);
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
             }
         });
