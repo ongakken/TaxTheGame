@@ -615,6 +615,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 Wpower = 0;
                 WpowerPay = 0;
                 WpowerPayI = 0;
+                taxAmount = 0;
+                printerSpeed = 1000;
                 powerBillEnabled = true;
                 taxEnabled = true;
             }
