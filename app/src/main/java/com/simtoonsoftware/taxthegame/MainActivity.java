@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     // Booleans
     boolean powerBillEnabled = true;
     boolean taxEnabled = true;
+    boolean wantToKill = true;
 
     // Long and Integers
     public boolean running = true;
@@ -97,9 +98,13 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     @Override
     protected void onPause() {
         super.onPause();
-        System.out.println("Exiting MainActivity ..."); //printing to console
-        android.os.Process.killProcess(android.os.Process.myPid());
-        finish();
+        if (wantToKill == true) {
+            System.out.println("Exiting MainActivity ..."); //printing to console
+            android.os.Process.killProcess(android.os.Process.myPid());
+            finish();
+        } else {
+            //nothing
+        }
     }
 
     @Override
@@ -159,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
         RandomMoneyAd = MobileAds.getRewardedVideoAdInstance(this);
         RandomMoneyAd.setRewardedVideoAdListener(this);
 
-        java.util.concurrent.ScheduledExecutorService scheduler =
+        final java.util.concurrent.ScheduledExecutorService scheduler =
                 java.util.concurrent.Executors.newSingleThreadScheduledExecutor();
         scheduler.scheduleAtFixedRate(new Runnable() {
             public void run() {
@@ -586,7 +591,19 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             @Override
             public void onClick(View v) {
                 if (RandomMoneyAd.isLoaded()) {
+                    wantToKill = false;
                     RandomMoneyAd.show();
+                    Thread killDelay = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            while (running) {
+                                delay(10000);
+                                wantToKill = true;
+                                break;
+                            }
+                        }
+                    });
+                    killDelay.start();
                 }
             }
         });
