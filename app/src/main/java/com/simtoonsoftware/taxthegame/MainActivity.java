@@ -293,6 +293,35 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                                     WpowerPay = 0;
                                 }
 
+                                if (money > 9199999999999999999L) {
+                                    Toast.makeText(context, "Game finished!", duration).show();
+                                    save.clear();
+                                    save.commit();
+                                    money = 0;
+                                    click = 1;
+                                    printerpower = 0;
+                                    printers = 0;
+                                    printert1 = 0;
+                                    printert2 = 0;
+                                    printert3 = 0;
+                                    printert4 = 0;
+                                    printert5 = 0;
+                                    printert6 = 0;
+                                    printert7 = 0;
+                                    printert8 = 0;
+                                    printert9 = 0;
+                                    printert10 = 0;
+                                    printert11 = 0;
+                                    time = 0;
+                                    Wpower = 0;
+                                    WpowerPay = 0;
+                                    WpowerPayI = 0;
+                                    taxAmount = 0;
+                                    printerSpeed = 1000;
+                                    powerBillEnabled = true;
+                                    taxEnabled = true;
+                                }
+
                                 cashbutton.setText("Click\n" + click + "€");
                                 machine.setText("Tier 1 " + "(" + printert1 + ")" + "\n100€\n+2€/s");
                                 machine1.setText("Tier 2 " + "(" + printert2 + ")" + "\n1000€\n+25€/s");
