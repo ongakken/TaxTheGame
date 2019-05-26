@@ -454,37 +454,35 @@
         android:text="Tier 11 (0)\n1000000000000000000€\n+10000000000€/s"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="9sp"
+        android:textSize="12sp"
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbutton"
-        app:layout_constraintVertical_bias="0.693" />
+        app:layout_constraintVertical_bias="0.806" />
 
     <Button
         android:id="@+id/machineT10"
         android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/tier_10_printer"
         android:fontFamily="serif"
         android:text="Tier 10 (0)\n10000000000000000€\n+1000000000€/s"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.019"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbutton"
-        app:layout_constraintVertical_bias="0.837" />
+        app:layout_constraintVertical_bias="0.806" />
 
     <Button
         android:id="@+id/btn_reset"

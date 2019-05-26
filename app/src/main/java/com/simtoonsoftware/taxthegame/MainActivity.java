@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     boolean powerBillEnabled = true;
     boolean taxEnabled = true;
     boolean wantToKill = true;
+    boolean didGovConfiscate = false;
 
     //Long and Integers
     public boolean running = true;
@@ -320,6 +321,15 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                                     printerSpeed = 1000;
                                     powerBillEnabled = true;
                                     taxEnabled = true;
+                                }
+
+                                if (money >= 9000000000L) {
+                                    if (!didGovConfiscate) {
+                                        money -= money / 5;
+                                        Toast.makeText(context, "A government agency came and took a part of your money!", duration).show();
+                                        didGovConfiscate = true;
+                                    }
+
                                 }
 
                                 cashbutton.setText("Click\n" + click + "€");
