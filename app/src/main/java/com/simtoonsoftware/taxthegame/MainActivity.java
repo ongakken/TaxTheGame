@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
     public void setRequestedOrientation(int requestedOrientation) {
         super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
-    // Booleans
+    //Booleans
     boolean powerBillEnabled = true;
     boolean taxEnabled = true;
     boolean wantToKill = true;
 
-    // Long and Integers
+    //Long and Integers
     public boolean running = true;
     double version = 0.35;
     public long money;
@@ -373,7 +373,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                 save.putBoolean("taxEnabled", taxEnabled);
                 save.apply();
             }
-        }, 2500, 2500);
+        }, 2000, 2000);
 
         clock.schedule(
                 new TimerTask() {
@@ -533,7 +533,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     printers += 1;
                     printert6 += 1;
                     printerpower += 25000000;
-                    Wpower += 200;
+                    Wpower += 250;
                 } else if (100000000 >= money) {
                     Toast.makeText(context, "Not Enough Money!", duration).show();
                 }
@@ -548,7 +548,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     printers += 1;
                     printert7 += 1;
                     printerpower += 250000000;
-                    Wpower += 250;
+                    Wpower += 275;
                 } else if (10000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
@@ -563,7 +563,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     printers += 1;
                     printert8 += 1;
                     printerpower += 25000000000L;
-                    Wpower += 250;
+                    Wpower += 280;
                 } else if (1000000000000L >= money) {
                     Toast.makeText(context, "Not enough money!", duration).show();
                 }
@@ -621,6 +621,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             public void onClick(View v) {
                 if (RandomMoneyAd.isLoaded()) {
                     wantToKill = false;
+                    prepareAd();
                     RandomMoneyAd.show();
                     Thread killDelay = new Thread(new Runnable() {
                         @Override
@@ -696,10 +697,6 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
             @Override
             public void onClick(View v) {
                 prepareAd();
-                RandomInterstitialAd.show();
-                //Intent i = new Intent(MainActivity.this, AboutActivity.class);
-                //i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                //startActivity(i);
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
             }
         });
