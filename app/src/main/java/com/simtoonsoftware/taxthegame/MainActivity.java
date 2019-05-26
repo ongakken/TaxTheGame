@@ -322,6 +322,12 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                                     taxEnabled = true;
                                 }
 
+                                if (money >= 9000000000L) {
+                                    money -= money/5;
+                                    Toast.makeText(context, "A government agency came and took a part of your money!", duration).show();
+
+                                }
+
                                 cashbutton.setText("Click\n" + click + "€");
                                 machine.setText("Tier 1 " + "(" + printert1 + ")" + "\n100€\n+2€/s");
                                 machine1.setText("Tier 2 " + "(" + printert2 + ")" + "\n1000€\n+25€/s");
