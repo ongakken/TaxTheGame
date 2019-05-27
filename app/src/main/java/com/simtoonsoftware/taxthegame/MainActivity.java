@@ -645,7 +645,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, Rewarde
                     });
                     killDelay.start();
                 } else {
-                    Toast.makeText(context, "No AD is available right now, try again later please.", duration).show();
+                    Toast.makeText(context, "No AD is available right now, please try again later.", duration).show();
                 }
             }
         });
