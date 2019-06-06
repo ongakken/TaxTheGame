@@ -13,9 +13,7 @@
         android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/tier_8_printer"
         android:fontFamily="serif"
@@ -26,7 +24,7 @@
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbutton"
         app:layout_constraintVertical_bias="0.468" />
@@ -36,9 +34,7 @@
         android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/tier_9_printer"
         android:fontFamily="serif"
@@ -52,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbutton"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.43" />
 
     <TextView
         android:id="@+id/cash"
@@ -149,7 +145,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:background="@drawable/overclock_icon"
         android:fontFamily="serif"
         android:text="OC Printers (-0MS)\n 5000€"
@@ -159,8 +154,10 @@
         android:typeface="serif"
         app:layout_constraintBottom_toTopOf="@+id/machineT2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameclock" />
+        app:layout_constraintTop_toBottomOf="@+id/gameclock"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/machineT1"
@@ -189,7 +186,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="58dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:background="@drawable/tier_2_printer"
         android:fontFamily="serif"
         android:text="Tier 2 (0)\n1000€\n+10€/s"
@@ -199,6 +195,7 @@
         android:typeface="serif"
         app:layout_constraintBottom_toTopOf="@+id/cashbutton"
         app:layout_constraintEnd_toStartOf="@+id/machineT3"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toEndOf="@+id/machineT1"
         app:layout_constraintTop_toBottomOf="@+id/gameclock"
         app:layout_constraintVertical_bias="0.0" />
@@ -227,7 +224,7 @@
         android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/tier_4_printer"
         android:fontFamily="serif"
@@ -237,9 +234,9 @@
         android:textSize="12sp"
         android:typeface="serif"
         app:layout_constraintEnd_toStartOf="@+id/cashbutton"
-        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cashbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/machineT1" />
 
     <Button
         android:id="@+id/machineT5"
@@ -257,10 +254,10 @@
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/machineT6"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toEndOf="@+id/machineT4"
         app:layout_constraintTop_toTopOf="@+id/cash"
-        app:layout_constraintVertical_bias="0.631" />
+        app:layout_constraintVertical_bias="0.632" />
 
     <Button
         android:id="@+id/machineT6"
@@ -329,9 +326,7 @@
         android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginStart="27dp"
-        android:layout_marginLeft="27dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
         android:background="@drawable/add_one_dollar_icon"
         android:fontFamily="serif"
         android:minWidth="0dp"
@@ -344,7 +339,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cashbutton"
         app:layout_constraintTop_toTopOf="@+id/cashbutton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <TextView
         android:id="@+id/taxview"
@@ -424,9 +419,7 @@
         android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/tier_7_printer"
         android:fontFamily="serif"
@@ -437,7 +430,7 @@
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbutton"
         app:layout_constraintVertical_bias="0.468" />
@@ -458,7 +451,7 @@
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbutton"
         app:layout_constraintVertical_bias="0.806" />
@@ -474,12 +467,12 @@
         android:fontFamily="serif"
         android:text="Tier 10 (0)\n10000000000000000€\n+1000000000€/s"
         android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="12sp"
+        android:textColor="#ffffff"
+        android:textSize="11sp"
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbutton"
         app:layout_constraintVertical_bias="0.806" />
