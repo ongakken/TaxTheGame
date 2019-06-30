@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "591265753823",
+    "firebase_url": "https://taxthegame.firebaseio.com",
+    "project_id": "taxthegame",
+    "storage_bucket": "taxthegame.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591265753823:android:4b5bcf889b4c7123",
+        "android_client_info": {
+          "package_name": "com.simtoonsoftware.taxthegame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591265753823-rrohnb3ngb1fs8d0a88md6pgqnki7ea3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3qOEA0mdi3Pg1KJgyUvVqRVXpKmv7PJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591265753823-rrohnb3ngb1fs8d0a88md6pgqnki7ea3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9086446979210331~1649262169"
+    }
+  ],
+  "configuration_version": "1"
+}
